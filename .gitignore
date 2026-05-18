@@ -1,0 +1,14 @@
+workspace-robotControl/robot-control/backend/venv/
+
+workspace-robotControl/LM/vosk-model-de-0.21/
+
+__pycache__/
+*.pyc
+**/__pycache__/
+
+.env
+
+.vscode/
+.idea/
+
+*.zip

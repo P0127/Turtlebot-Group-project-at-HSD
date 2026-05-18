@@ -1,0 +1,32 @@
+/* Hintergrund für ControlPanel */
+.control-page {
+    background: #0b1220;
+    min-height: 100vh;
+    padding: 2rem;
+    color: white;
+  }
+  
+  /* Standard Panel */
+  .panel {
+    background: #1e293b;
+    border-radius: 12px;
+  }
+  
+  /* Titel */
+  .panel-title {
+    color: $info;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Grid */
+  .panel-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  /* Logs */
+  .logs {
+    background: #020617;
+  }

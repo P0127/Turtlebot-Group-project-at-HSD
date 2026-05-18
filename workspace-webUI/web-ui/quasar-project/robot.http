@@ -1,0 +1,65 @@
+# -----------------------------
+# 1. Health-Check (GET)
+# -----------------------------
+GET http://127.0.0.1:8000/api/v1/control/health
+Accept: application/json
+
+###
+
+# -----------------------------
+# 2. Befehl: Vorwärts (POST)
+# -----------------------------
+POST http://127.0.0.1:8000/api/v1/control/command
+Content-Type: application/json
+
+{
+  "command": "forward"
+}
+
+###
+
+# -----------------------------
+# 3. Befehl: Rückwärts (POST)
+# -----------------------------
+POST http://127.0.0.1:8000/api/v1/control/command
+Content-Type: application/json
+
+{
+  "command": "backward"
+}
+
+###
+
+# -----------------------------
+# 4. Befehl: Links drehen (POST)
+# -----------------------------
+POST http://127.0.0.1:8000/api/v1/control/command
+Content-Type: application/json
+
+{
+  "command": "left"
+}
+
+###
+
+# -----------------------------
+# 5. Befehl: Rechts drehen (POST)
+# -----------------------------
+POST http://127.0.0.1:8000/api/v1/control/command
+Content-Type: application/json
+
+{
+  "command": "right"
+}
+
+###
+
+# -----------------------------
+# 6. Stop (POST)
+# -----------------------------
+POST http://127.0.0.1:8000/api/v1/control/stop
+
+# -----------------------------
+# 7. Photo (GET)
+# -----------------------------
+GET http://127.0.0.1:8000/api/v1/control/photo

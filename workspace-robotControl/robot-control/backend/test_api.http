@@ -1,0 +1,34 @@
+### 1. Health-Check
+GET http://127.0.0.1:8000/api/v1/control/health
+Accept: application/json
+
+### 2. Befehl: Vorwärts (Standardzeit)
+POST http://127.0.0.1:8000/api/v1/control/command
+Content-Type: application/json
+
+{
+  "command": "forward"
+}
+
+### 3. Befehl: Vorwärts (Mit Zeit - Test ob das auch noch geht)
+POST http://127.0.0.1:8000/api/v1/control/command
+Content-Type: application/json
+
+{
+  "command": "forward 2.5"
+}
+
+### 4. Links drehen
+POST http://127.0.0.1:8000/api/v1/control/command
+Content-Type: application/json
+
+{
+  "command": "left"
+}
+
+### 5. Foto aufnehmen (NEU!)
+GET http://127.0.0.1:8000/api/v1/control/photo
+Accept: application/json
+
+### 6. Stopp
+POST http://127.0.0.1:8000/api/v1/control/stop

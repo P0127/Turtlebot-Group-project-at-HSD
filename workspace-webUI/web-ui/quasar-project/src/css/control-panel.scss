@@ -1,0 +1,656 @@
+/* PAGE */
+.control-page {
+  min-height: 100vh;
+  padding: 32px;
+  background: linear-gradient(160deg, #f5f5f7, #ffffff 85%);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  color: #1c1c1e;
+  font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  backdrop-filter: blur(14px);
+}
+
+.status-panel .q-card__section {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+
+.dock-description {
+  margin: 14px 0 6px 0;
+}
+
+
+/* =========================
+   DOCK TEXT – FLIESSTEXT
+   ========================= */
+
+   .dock-description {
+    margin: 12px 0 6px 0;      /* näher an Buttons */
+    font-size: 0.77rem;
+    line-height: 1.6;
+    color: rgba(47, 47, 51, 0.78);
+    max-width: 720px;
+  }
+  
+  .dock-description p {
+    margin: 0 0 12px 0;
+  }
+
+
+.status-panel .photo-box {
+  flex-shrink: 0;
+}
+
+.status-panel .dock-description {
+  flex-shrink: 0;
+}
+
+
+/* =========================
+   DOCK BUTTONS
+   ========================= */
+
+   .status-panel .docking-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 8px;           /* enger an Text */
+  }
+
+/* GRID */
+.panel-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  /* Status/Control = 1fr, Visual = 2fr */
+  gap: 28px;
+}
+
+/* PANELS */
+.panel {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 32px;
+  border: 1px solid rgba(200, 200, 210, 0.2);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.06), 0 0 32px rgba(0, 0, 0, 0.02);
+  backdrop-filter: blur(16px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.panel:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 32px 70px rgba(0, 0, 0, 0.12), 0 0 36px rgba(0, 0, 0, 0.05);
+}
+
+/* HEADERS */
+.panel-header {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #1c1c1e;
+}
+
+/* STATUS */
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-weight: 500;
+  color: #2c2c2e;
+  font-size: 0.95rem;
+}
+
+.ok {
+  color: #34C759;
+  font-weight: 600;
+}
+
+.not-ok {
+  color: #ff3b30;
+  font-weight: 600;
+}
+
+.battery-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.dock-btn {
+  background: #0A84FF; 
+  color: white;
+  border-radius: 16px;
+  flex: 1;
+  font-weight: 600;
+}
+
+.undock-btn {
+  background: #34C759; 
+  color: white;
+  border-radius: 16px;
+  flex: 1;
+  font-weight: 600;
+}
+
+.dock-btn,
+.undock-btn {
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+/* Hover */
+.dock-btn:hover,
+.undock-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+}
+
+
+/* Active (Klick-Reaktion) */
+.dock-btn:active,
+.undock-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+.photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.photo-gallery img {
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease;
+}
+
+.photo-box img {
+  max-width: 100%;
+  border-radius: 24px;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.photo-box img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 36px rgba(0, 0, 0, 0.12);
+}
+
+.status-panel .photo-box {
+  margin-top: 47px;  
+}
+
+/* Error State Styling */
+.photo-error-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  background-color: #fff1f0; /* Very light red background */
+  width: 100%;
+  height: 100%;
+}
+
+.error-text {
+  color: #c41d7f;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.placeholder-text {
+  color: #9e9e9e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* SLIDERS */
+.slider-block {
+  margin-bottom: 24px;
+}
+
+.slider-block label {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  display: block;
+  color: rgba(60, 60, 67, 0.7);
+  font-weight: 500;
+}
+
+.apple-slider .q-slider__track {
+  background: linear-gradient(90deg, #0a84ff, #5ac8fa);
+  border-radius: 12px;
+  height: 12px;
+}
+
+.apple-slider .q-slider__thumb {
+  border: 2px solid #0a84ff;
+  background: #ffffff;
+  border-radius: 50% !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  width: 22px;
+  height: 22px;
+}
+
+/* CONTROL PAD */
+.control-pad {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.row-center {
+  display: flex;
+  gap: 20px;
+}
+
+.move-btn {
+  background: #f2f2f7;
+  color: #0a84ff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.move-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.stop-btn {
+  background: #FF3B30;
+  color: #ffffff;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.stop-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* ZIEL-NAVIGATION MEHR HÖHE & ABSTAND */
+.panel .panel {
+  margin-top: 24px;
+}
+
+/* COORDINATES */
+.nav-input :deep(.q-field__control) {
+  border-radius: 14px;
+  background: #f2f2f7;
+}
+
+.nav-btn {
+  background: #0a84ff; 
+  color: white;
+  border-radius: 20px;
+  font-weight: 600;
+  height: 49px;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  background: #28a745;
+  transform: translateY(-1px);
+}
+
+/* VOICE & FOTO BUTTON */
+.voice-btn {
+  background: #0a84ff;
+  color: #ffffff;
+  margin-top: 14px;
+  font-weight: 600;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+  border-radius: 24px;
+  transition: all 0.2s ease;
+}
+
+.voice-btn:hover {
+  background: #0060c0;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.22);
+}
+
+/* VISUAL BOX */
+.visual-box {
+  position: relative;
+  height: 180px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, rgba(245, 245, 250, 0.95), rgba(255, 255, 255, 0.88));
+  border: 1px solid rgba(200, 200, 210, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0a84ff;
+  box-shadow: inset 0 0 14px rgba(0, 0, 0, 0.04);
+}
+
+/* FOOTER */
+.apple-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px 28px;
+  border-radius: 28px;
+
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(200, 200, 210, 0.25);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #1c1c1e;
+}
+
+/* FOOTER LEFT GROUP (für Whitespace) */
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 24px; 
+}
+
+.footer-text {
+  opacity: 0.85;
+  letter-spacing: 0.2px;
+}
+
+.footer-logo img {
+  height: 42px;
+  width: auto;
+  opacity: 0.9;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.footer-logo img:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* BUTTON FEEL */
+.q-btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.q-btn:hover {
+  transform: translateY(-0.5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .panel-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.speech-box {
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+}
+
+.report-btn {
+  font-size: 0.85rem;
+  padding: 8px 16px;
+  height: 83px;
+  min-height: 83px;
+
+  border-radius: 18px;
+  font-weight: 500;
+
+  background: #66B2A8;
+  color: white;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
+}
+
+.report-btn:hover {
+  background: linear-gradient(135deg, #0060c0, #3aaaf2);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.25);
+}
+
+.report-btn:active {
+  transform: scale(0.98);
+}
+
+/* GRAUER TEXTBEREICH */
+.speech-content {
+  flex: 1;
+  background: #f0f0f0;
+  border-radius: 20px 20px 0 0;
+  padding: 16px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  min-height: 360px;
+}
+
+/* WEISSER BEREICH UNTEN */
+.speech-footer {
+  background: #ffffff;
+  border-radius: 0 0 20px 20px;
+  padding: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* VISUAL BOX & GALERIE ANPASSUNG */
+
+.visual-gallery-wrapper {
+  display: flex;
+  gap: 16px;
+  margin-top: 22px;
+
+  align-items: stretch;      /* sorgt dafür, dass beide Visual-Boxen gleich hoch wirken */
+  width: 100%;
+}
+
+/* Große Visualisierung (rechteckiger) */
+.visual-box.large-visual {
+  flex: 3;
+  height: 360px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, rgba(245, 245, 250, 0.95), rgba(255, 255, 255, 0.88));
+  border: 1px solid rgba(200, 200, 210, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0a84ff;
+  box-shadow: inset 0 0 14px rgba(0, 0, 0, 0.04);
+}
+
+/* Scrollbare Galerie rechts */
+.photo-gallery-scroll {
+  flex: 1;
+  /* bleibt 1 */
+  display: grid;
+  grid-template-columns: 1fr;
+  /* optional 1 Spalte, rechteckig */
+  grid-auto-rows: 1fr;
+  gap: 10px;
+  max-height: 360px;
+  overflow-y: auto;
+  padding: 6px;
+  border-radius: 20px;
+  border: 1px solid rgba(200, 200, 210, 0.2);
+  background: #f9f9fb;
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.04);
+}
+
+/* Scrollbar Apple-Stil */
+.photo-gallery-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.photo-gallery-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(10, 132, 255, 0.5);
+  border-radius: 4px;
+}
+
+/* Rechteckige Fotos in Galerie */
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* füllt die Fläche */
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Einzelnes Foto im großen Visual-Bereich */
+.photo-gallery-single {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-gallery-single img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.photo-description {
+  margin: 6px 0 24px 0;
+  font-size: 0.77rem;
+  line-height: 1.6;
+  color: rgba(47, 47, 51, 0.78);
+  max-width: 720px;
+}
+
+.visual-gallery-wrapper {
+  margin-top: 22px;
+}
+
+/* =========================
+   CHAT – SPRACHSTEUERUNG
+   ========================= */
+
+   .apple-chat-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 560px;
+  background: #f2f2f7;
+  border-radius: 24px;
+  padding: 12px;
+}
+
+/* CHAT SCROLL */
+.apple-chat-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+}
+
+/* Scrollbares Chat */
+.apple-chat-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.apple-chat-scroll::-webkit-scrollbar-thumb {
+  background: rgba(60, 60, 67, 0.35);
+  border-radius: 4px;
+}
+
+.apple-chat-textfield textarea {
+  overflow-y: auto;
+}
+
+/* CHAT BUBBLES */
+.apple-chat-bubble {
+  max-width: 72%;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  border-radius: 20px;
+
+  /* wichtig für die Umbrüche, damit die Nachrichten mit dem Umbruch im Chat erscheinen */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+/* ICH AUS DEM SPRACHCHAT */
+.apple-chat-bubble.user {
+  margin-left: auto;
+  background: linear-gradient(135deg, #0a84ff, #4aa3ff);
+  color: #ffffff;
+  border-bottom-right-radius: 6px;
+}
+
+/* TURTLE BOT AUS DEM SPRACHCHAT*/
+.apple-chat-bubble.robot {
+  margin-right: auto;
+  background: #ffffff;
+  color: #1c1c1e;
+  border-bottom-left-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+/* INPUT BAR */
+.apple-chat-input {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: #ffffff;
+  border-radius: 20px;
+  margin-top: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Textfeld nimmt den Platz */
+.apple-chat-textfield {
+  flex: 1;
+}
+
+/* Send-Button klar rechts */
+.apple-send-btn {
+  background: #0a84ff;
+  color: #ffffff;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+}
+
+/* FOOTER SPRACHCHAT*/
+.apple-chat-footer {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;           /* Abstand zwischen Buttons */
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+

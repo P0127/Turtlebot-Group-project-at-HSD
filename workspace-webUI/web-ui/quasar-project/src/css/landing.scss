@@ -1,0 +1,63 @@
+// <style scoped lang="scss">
+/* GANZE SEITE */
+.landing {
+  height: 100vh;
+  background: #f5f5f5; /* heller Hintergrund wie im Bild */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* WRAPPER */
+.landing-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ROBOTER LINKS */
+.robot {
+  height: 340px;
+}
+
+/* MITTELTEIL */
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  color: #000;
+}
+
+/* BUTTON – Standard Quasar Look */
+.center :deep(.q-btn) {
+  min-width: 160px;
+}
+
+/* LOGO RECHTS */
+.logo {
+  height: 80px;
+}
+
+/* RESPONSIVE (optional, aber sinnvoll) */
+@media (max-width: 900px) {
+  .landing-wrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .robot {
+    height: 220px;
+  }
+
+  .logo {
+    height: 60px;
+  }
+}
+//</style>
